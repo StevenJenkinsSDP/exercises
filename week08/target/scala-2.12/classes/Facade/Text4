@@ -1,0 +1,4 @@
+The Facade Pattern provides a unified interface to a sub sytem of interfaces.
+A higher level interface that makes the sub sytem easier to use
+
+It could be used in a home theatre as in "turn on" then calls each of the different components on methods.

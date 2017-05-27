@@ -1,0 +1,8 @@
+
+
+The Abstract Factory pattern defines an interface for creating families
+of related or dependent objects without specifying their concerete classes.
+
+It is a central design pattern for Dependency Injection
+
+Use when creating classes with different instantiation procedures

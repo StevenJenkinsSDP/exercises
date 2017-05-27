@@ -1,0 +1,12 @@
+q1.
+
+strategy design pattern defines a series of algorithms and then encapsulates this behaviour
+
+it favours inheritance over composition
+
+Strategy lets the algorithm vary independently from client that uses it.
+
+q2.
+
+Strategy is used when there is behaviour that is likely to change.
+

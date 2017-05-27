@@ -1,0 +1,15 @@
+(a) What is the Composite Pattern?
+
+A composite Pattern iallows you to compose objects in tree structures to represent part whole hierarchies.
+
+
+
+(b) Under what conditions would you use a Composite Design Pattern?
+
+Composite pattern is used where we need to treat a group of objects in similar way as a single object. such as a menu
+structure that could have other menus or food items
+
+
+(c) What are the four participants of the Composite Design Pattern?
+
+Client, Component, Leaf and Composite
