@@ -1,4 +1,4 @@
-package test.scala.support
+package support
 
 import scala.io.Source
 import scala.reflect.runtime.universe._

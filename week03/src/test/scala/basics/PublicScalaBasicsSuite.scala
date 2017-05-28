@@ -1,4 +1,4 @@
-package test.scala.basics
+package basics
 
 import basics.ScalaBasics._
 import org.scalatest.FunSuite

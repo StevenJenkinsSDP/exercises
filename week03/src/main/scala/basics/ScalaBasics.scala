@@ -1,4 +1,5 @@
-package main.scala.basics
+package basics
+import scala.runtime.RichInt
 
 /**
  * This is a singleton object containing the functions you need
@@ -15,7 +16,7 @@ object ScalaBasics {
    * @param b operand b
    * @return the sum
    */
-  def add(a: Int, b: Int): Int = ???
+  def add(a: Int, b: Int): Int = a + b
 
   /**
    * Write a function that returns the inclusive Range from start to end.
@@ -26,7 +27,7 @@ object ScalaBasics {
    * @param end the end of the range
    * @return the inclusive Range from start to end
    */
-  def inRange(start: Int, end: Int): Range = ???
+  def inRange(start: Int, end: Int): Range = start.to(end)
   
   /**
    * Write a function that returns a Range of odd n odd integers starting at 1.
@@ -36,7 +37,7 @@ object ScalaBasics {
    * @param n the number of odd integers in the range
    * @return a Range of odd integers, excluding the last add integer
    */
-  def oddRange(n: Int): Range = ???
+  def oddRange(n: Int): Range = 1.to(n,2)
   
   /**
    * Write a function that returns the minimum integer in the Array r.
@@ -50,7 +51,17 @@ object ScalaBasics {
    * @param r the array of integers
    * @return the minimum integer in the array
    */
-  def minWhile(r: Array[Int]): Int = ???
+  def minWhile(r: Array[Int]): Int = {
+    val arraySize = r.size
+    var i = arraySize-1
+    var minValue = r(i)
+    while (i>=0) {
+      var curValue = r(i)
+      if (curValue<minValue) minValue = curValue
+      i -=1
+    }
+    minValue
+  }
 
   /**
    * Write a function that returns the minimum integer in the Array r.
@@ -64,7 +75,15 @@ object ScalaBasics {
    * @param r the array of integers
    * @return the minimum integer in the array
    */
-  def minFor(r: Array[Int]): Int = ???
+  def minFor(r: Array[Int]): Int = {
+    val arraySize = r.size-1
+    var minValue = r(arraySize)
+    for(i<- 0 until arraySize) {
+
+      minValue = minValue.min(r(i))
+    }
+    minValue
+  }
 
   /**
    * Write a function called minRecursive that returns the minimum integer in the Array r.
@@ -90,7 +109,7 @@ object ScalaBasics {
    * @param b a big integer
    * @return the base 36 equivalent
    */
-  def base36(b: BigInt): String = ???
+  def base36(b: BigInt): String = b.toString(36)
 
   /**
    * Splits the String s in half.
@@ -113,7 +132,7 @@ object ScalaBasics {
    * @param s the string to split
    * @return the split string as a tuple
    */
-  def splitInHalf(s: String): (String, String) = ???
+  def splitInHalf(s: String): (String, String) = s.splitAt(s.length/2)
 
   /**
    * Determines if the given string s is a palindrome.
@@ -136,7 +155,19 @@ object ScalaBasics {
    * @param s the potential palindrome
    * @return true if s is a palindrome; false otherwise
    */
-  def isPalindrome(s: String): Boolean = ???
+  def isPalindrome(s: String): Boolean = {
+
+    val s1 = s.toLowerCase
+    val reverse = for(c<-s1; i<-s1.length-1 to 0) yield c.toString
+    println(reverse)
+    println(s1.length-1)
+    (reverse==reverse)
+  }
+
+
+  def main(args: Array[String]): Unit = {
+      isPalindrome("racecar1")
+       }
 
   /**
    * You don't have to complete this one as we've removed it from the list
