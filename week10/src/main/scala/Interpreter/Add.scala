@@ -3,7 +3,7 @@ package Interpreter
 /**
   * Created by steven on 28/05/2017.
   */
-class Add(private val leftExpression: Expression,
+case class Add(private val leftExpression: Expression,
           private val rightExpression: Expression)
   extends Expression {
 
