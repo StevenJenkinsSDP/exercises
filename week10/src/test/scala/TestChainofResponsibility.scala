@@ -1,12 +1,13 @@
+import ChainOfResponsibility._
 
 object TestChainofResponsibility extends App {
   var file:File = null
-  val textHandler: Handler = TextFileHandler("Text Handler");
-  val docHandler: Handler = DocFileHandler("Doc Handler");
-  val excelHandler: Handler = ExcelFileHandler("Excel Handler");
-  val audioHandler: Handler = AudioFileHandler("Audio Handler");
-  val videoHandler: Handler = VideoFileHandler("Video Handler");
-  val imageHandler: Handler = ImageFileHandler("Image Handler");
+  val textHandler: Handler = TextFileHandler("Text ChainOfResponsibility.Handler");
+  val docHandler: Handler = DocFileHandler("Doc ChainOfResponsibility.Handler");
+  val excelHandler: Handler = ExcelFileHandler("Excel ChainOfResponsibility.Handler");
+  val audioHandler: Handler = AudioFileHandler("Audio ChainOfResponsibility.Handler");
+  val videoHandler: Handler = VideoFileHandler("Video ChainOfResponsibility.Handler");
+  val imageHandler: Handler = ImageFileHandler("Image ChainOfResponsibility.Handler");
   textHandler.setHandler(docHandler)
   docHandler.setHandler(excelHandler)
   excelHandler.setHandler(audioHandler)

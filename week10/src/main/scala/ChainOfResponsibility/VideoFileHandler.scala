@@ -1,3 +1,5 @@
+package ChainOfResponsibility
+
 /**
   * Created by steven on 28/05/2017.
   */
@@ -8,7 +10,10 @@ case class VideoFileHandler(name:String) extends Handler {
     h = handler
   }
   def process(file: File) = {
-    if (file.fileType.equals("mp4")) getHandlerName() else h.process(file)
+    if (file.fileType.equals("video")) println(getHandlerName()) else {
+      println(getHandlerName() + " forward request to " + file.fileName)
+      h.process(file)
+    }
   }
   def getHandlerName(): String = name
 }

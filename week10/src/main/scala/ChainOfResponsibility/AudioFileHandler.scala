@@ -1,3 +1,5 @@
+package ChainOfResponsibility
+
 /**
   * Created by steven on 28/05/2017.
   */
@@ -8,7 +10,11 @@ case class AudioFileHandler(name:String) extends Handler {
     h = handler
   }
   def process(file: File) = {
-    if (file.fileType.equals("audio")) getHandlerName() else h.process(file)
+    if (file.fileType.equals("audio")) println(getHandlerName()) else {
+      println(getHandlerName() + " forward request to " + file.fileName)
+      h.process(file)
+    }
+
   }
   def getHandlerName(): String = name
 }
